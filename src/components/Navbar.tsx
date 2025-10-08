@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="/TechMobile4U-Main-Logo.svg" 
+              src="/techmobile4u-main-logo.svg" 
               alt="TechMobile4U" 
               className="h-8 w-auto"
             />

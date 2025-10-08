@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <img 
-                src="/TechMobile4U-Main-Logo.svg" 
+                src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-10 w-auto"
               />
