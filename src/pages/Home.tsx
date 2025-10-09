@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-accent text-primary-foreground">
+      <section className="relative overflow-hidden text-white" style={{backgroundColor: '#7bc5f6'}}>
         <div className="container py-24 md:py-32">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             {/* Left side - Text content */}
@@ -94,7 +94,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-accent to-primary">
+      <section className="py-20 text-white" style={{backgroundColor: '#7bc5f6'}}>
         <div className="container text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Got a Device to Sell?
