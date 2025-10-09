@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
-                className="h-10 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">

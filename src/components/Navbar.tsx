@@ -9,13 +9,13 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
             <img 
               src="/techmobile4u-main-logo.svg" 
               alt="TechMobile4U" 
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
           
