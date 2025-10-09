@@ -15,7 +15,7 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white" style={{backgroundColor: '#7bc5f6'}}>
-        <div className="container py-12 md:py-16">
+        <div className="container py-6 md:py-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             {/* Left side - Text content */}
             <div className="max-w-3xl lg:max-w-2xl">
