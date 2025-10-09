@@ -37,11 +37,11 @@ const Home = () => {
             </div>
             
             {/* Right side - Logo */}
-            <div className="flex items-center justify-center lg:justify-end">
+            <div className="flex items-center justify-start">
               <img 
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
-                className="h-32 md:h-40 lg:h-48 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                className="h-32 md:h-40 lg:h-48 w-auto ml-5 opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           </div>
