@@ -16,21 +16,33 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-accent text-primary-foreground">
         <div className="container py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Buy & Sell Premium Devices
-            </h1>
-            <p className="text-lg md:text-xl mb-8 opacity-90">
-              Shop the latest phones and tablets or sell your used devices for instant cash. 
-              Trusted, secure, and hassle-free.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" variant="secondary" asChild>
-                <Link to="/shop">Shop Now</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20" asChild>
-                <Link to="/sell">Sell Your Device</Link>
-              </Button>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Left side - Text content */}
+            <div className="max-w-3xl lg:max-w-2xl">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Buy & Sell Premium Devices
+              </h1>
+              <p className="text-lg md:text-xl mb-8 opacity-90">
+                Shop the latest phones and tablets or sell your used devices for instant cash. 
+                Trusted, secure, and hassle-free.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" variant="secondary" asChild>
+                  <Link to="/shop">Shop Now</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20" asChild>
+                  <Link to="/sell">Sell Your Device</Link>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right side - Logo */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <img 
+                src="/techmobile4u-main-logo.svg" 
+                alt="TechMobile4U" 
+                className="h-32 md:h-40 lg:h-48 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
           </div>
         </div>
