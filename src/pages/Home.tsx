@@ -15,33 +15,46 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white" style={{backgroundColor: '#7bc5f6'}}>
-        <div className="container py-6 md:py-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            {/* Left side - Text content */}
-            <div className="max-w-3xl lg:max-w-2xl">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className="container py-8 md:py-16">
+          {/* Mobile-first layout */}
+          <div className="flex flex-col items-center text-center space-y-8 lg:flex-row lg:items-center lg:justify-between lg:text-left lg:space-y-0 lg:gap-12">
+            
+            {/* Mobile Logo - Top Center */}
+            <div className="lg:hidden flex justify-center">
+              <img 
+                src="/techmobile4u-main-logo.svg" 
+                alt="TechMobile4U" 
+                className="h-16 w-auto opacity-95"
+              />
+            </div>
+            
+            {/* Content */}
+            <div className="max-w-2xl lg:max-w-2xl space-y-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Buy & Sell Premium Devices
               </h1>
-              <p className="text-lg md:text-xl mb-8 opacity-90">
+              <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed">
                 Shop the latest phones and tablets or sell your used devices for instant cash. 
                 Trusted, secure, and hassle-free.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" variant="secondary" asChild>
+              
+              {/* Mobile-optimized buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
                   <Link to="/shop">Shop Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20" asChild>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base py-3 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
                   <Link to="/sell">Sell Your Device</Link>
                 </Button>
               </div>
             </div>
             
-            {/* Right side - Logo */}
-            <div className="flex items-center justify-start">
+            {/* Desktop Logo - Right Side */}
+            <div className="hidden lg:flex items-center justify-center">
               <img 
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
-                className="h-48 md:h-56 lg:h-64 w-auto ml-5 opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-16 scale-110"
+                className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-16 scale-110"
               />
             </div>
           </div>
@@ -49,43 +62,43 @@ const Home = () => {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-12 md:py-16 bg-muted/50">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <Smartphone className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="font-semibold mb-2">Latest Devices</h3>
-              <p className="text-sm text-muted-foreground">Shop newest phones and tablets</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="text-center space-y-3">
+              <Smartphone className="h-8 w-8 md:h-12 md:w-12 mx-auto text-primary" />
+              <h3 className="font-semibold text-sm md:text-base">Latest Devices</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">Shop newest phones and tablets</p>
             </div>
-            <div className="text-center">
-              <Shield className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="font-semibold mb-2">Certified Quality</h3>
-              <p className="text-sm text-muted-foreground">All devices are tested and verified</p>
+            <div className="text-center space-y-3">
+              <Shield className="h-8 w-8 md:h-12 md:w-12 mx-auto text-primary" />
+              <h3 className="font-semibold text-sm md:text-base">Certified Quality</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">All devices are tested and verified</p>
             </div>
-            <div className="text-center">
-              <DollarSign className="h-12 w-12 mx-auto mb-4 text-success" />
-              <h3 className="font-semibold mb-2">Instant Quotes</h3>
-              <p className="text-sm text-muted-foreground">Get paid for your used devices</p>
+            <div className="text-center space-y-3">
+              <DollarSign className="h-8 w-8 md:h-12 md:w-12 mx-auto text-success" />
+              <h3 className="font-semibold text-sm md:text-base">Instant Quotes</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">Get paid for your used devices</p>
             </div>
-            <div className="text-center">
-              <Tablet className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h3 className="font-semibold mb-2">Wide Selection</h3>
-              <p className="text-sm text-muted-foreground">Apple, Samsung, Google & more</p>
+            <div className="text-center space-y-3">
+              <Tablet className="h-8 w-8 md:h-12 md:w-12 mx-auto text-primary" />
+              <h3 className="font-semibold text-sm md:text-base">Wide Selection</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">Apple, Samsung, Google & more</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold">Featured Products</h2>
-            <Button variant="ghost" asChild>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 md:mb-8 space-y-2 sm:space-y-0">
+            <h2 className="text-2xl md:text-3xl font-bold">Featured Products</h2>
+            <Button variant="ghost" className="self-start sm:self-auto" asChild>
               <Link to="/shop">View All →</Link>
             </Button>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -94,15 +107,15 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-white" style={{backgroundColor: '#7bc5f6'}}>
-        <div className="container text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-12 md:py-20 text-white" style={{backgroundColor: '#7bc5f6'}}>
+        <div className="container text-center">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Got a Device to Sell?
           </h2>
-          <p className="text-lg mb-8 opacity-90">
+          <p className="text-base md:text-lg mb-6 md:mb-8 opacity-90 max-w-2xl mx-auto">
             Get an instant quote and turn your old device into cash today
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
             <Link to="/sell">Get Your Quote</Link>
           </Button>
         </div>
