@@ -14,18 +14,6 @@ const Navbar = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Close search when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setSearchQuery("");
-        setSearchResults([]);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   // Filter products based on search query
   useEffect(() => {
     if (searchQuery.trim()) {
@@ -35,7 +23,7 @@ const Navbar = () => {
           product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
           product.model.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      setSearchResults(filtered.slice(0, 5)); // Limit to 5 results
+      setSearchResults(filtered.slice(0, 5));
     } else {
       setSearchResults([]);
     }
@@ -45,6 +33,7 @@ const Navbar = () => {
     navigate(`/product/${productId}`);
     setMobileSearchOpen(false);
     setSearchQuery("");
+    setSearchResults([]);
   };
 
   return (
