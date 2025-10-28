@@ -8,7 +8,7 @@ import { mockProducts } from "@/data/mockProducts";
 const Navbar = () => {
   const [phonesOpen, setPhonesOpen] = useState(false);
   const [tabletsOpen, setTabletsOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -18,14 +18,13 @@ const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setSearchOpen(false);
+        setSearchQuery("");
+        setSearchResults([]);
       }
     };
-    if (searchOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [searchOpen]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Filter products based on search query
   useEffect(() => {
@@ -44,7 +43,7 @@ const Navbar = () => {
 
   const handleProductClick = (productId: string) => {
     navigate(`/product/${productId}`);
-    setSearchOpen(false);
+    setMobileSearchOpen(false);
     setSearchQuery("");
   };
 
@@ -124,7 +123,6 @@ const Navbar = () => {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setSearchOpen(true)}
                 className="pl-10 pr-4 h-10 w-full"
               />
               {searchQuery && (
@@ -141,7 +139,7 @@ const Navbar = () => {
             </div>
             
             {/* Search Results Dropdown */}
-            {searchOpen && searchQuery && searchResults.length > 0 && (
+            {searchQuery && searchResults.length > 0 && (
               <div className="absolute top-full mt-2 w-full bg-popover border rounded-lg shadow-lg max-h-96 overflow-y-auto z-50">
                 {searchResults.map((product) => (
                   <button
@@ -166,7 +164,7 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setSearchOpen(true)}
+            onClick={() => setMobileSearchOpen(true)}
           >
             <Search className="h-5 w-5" />
           </Button>
@@ -187,7 +185,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Search Modal */}
-      {searchOpen && (
+      {mobileSearchOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-background">
           <div className="flex flex-col h-full">
             {/* Header */}
@@ -214,7 +212,11 @@ const Navbar = () => {
                   </button>
                 )}
               </div>
-              <Button variant="ghost" onClick={() => setSearchOpen(false)}>
+              <Button variant="ghost" onClick={() => {
+                setMobileSearchOpen(false);
+                setSearchQuery("");
+                setSearchResults([]);
+              }}>
                 Cancel
               </Button>
             </div>
