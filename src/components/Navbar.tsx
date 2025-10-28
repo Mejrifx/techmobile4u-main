@@ -20,8 +20,7 @@ const Navbar = () => {
       const filtered = mockProducts.filter(
         (product) =>
           product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.model.toLowerCase().includes(searchQuery.toLowerCase())
+          product.brand.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setSearchResults(filtered.slice(0, 5));
     } else {
@@ -138,7 +137,7 @@ const Navbar = () => {
                   >
                     <div className="flex-1">
                       <p className="font-medium text-sm">{product.name}</p>
-                      <p className="text-xs text-muted-foreground">{product.brand} • {product.model}</p>
+                      <p className="text-xs text-muted-foreground">{product.brand} • {product.category}</p>
                     </div>
                     <p className="text-sm font-semibold text-primary">${product.price}</p>
                   </button>
@@ -222,7 +221,7 @@ const Navbar = () => {
                         className="w-full px-4 py-4 text-left hover:bg-accent transition-colors"
                       >
                         <p className="font-medium">{product.name}</p>
-                        <p className="text-sm text-muted-foreground">{product.brand} • {product.model}</p>
+                        <p className="text-sm text-muted-foreground">{product.brand} • {product.category}</p>
                         <p className="text-sm font-semibold text-primary mt-1">${product.price}</p>
                       </button>
                     ))}
