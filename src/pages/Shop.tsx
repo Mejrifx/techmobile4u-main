@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import PromoBar from "@/components/PromoBar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { mockProducts } from "@/data/mockProducts";
@@ -20,6 +21,7 @@ const Shop = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <PromoBar />
       
       <div className="container py-8">
         <h1 className="text-4xl font-bold mb-8">Shop All Devices</h1>

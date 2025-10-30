@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import PromoBar from "@/components/PromoBar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { mockProducts } from "@/data/mockProducts";
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <PromoBar />
       
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white" style={{backgroundColor: '#7bc5f6'}}>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import PromoBar from "@/components/PromoBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -74,6 +75,7 @@ const Sell = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <PromoBar />
       
       <div className="container py-8 max-w-2xl">
         <h1 className="text-4xl font-bold mb-2">Sell Your Device</h1>
