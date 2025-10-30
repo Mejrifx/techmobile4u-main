@@ -48,13 +48,13 @@ const Navbar = () => {
           </Link>
           
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/" className="relative text-sm font-medium hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-[width] after:duration-300">
               Home
             </Link>
-            <Link to="/shop" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/shop" className="relative text-sm font-medium hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-[width] after:duration-300">
               Shop
             </Link>
-            <Link to="/sell" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/sell" className="relative text-sm font-medium hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-[width] after:duration-300">
               Sell
             </Link>
           </div>
