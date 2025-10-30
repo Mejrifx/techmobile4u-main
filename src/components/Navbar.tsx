@@ -54,52 +54,8 @@ const Navbar = () => {
             <Link to="/shop" className="text-sm font-medium hover:text-primary transition-colors">
               Shop
             </Link>
-            
-            <div 
-              className="relative"
-              onMouseEnter={() => setPhonesOpen(true)}
-              onMouseLeave={() => setPhonesOpen(false)}
-            >
-              <Link to="/phones" className="text-sm font-medium hover:text-primary transition-colors">
-                Phones
-              </Link>
-              {phonesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-popover border rounded-lg shadow-lg py-2 z-50">
-                  <Link to="/phones?brand=Apple" className="block px-4 py-2 text-sm hover:bg-accent transition-colors">
-                    Apple
-                  </Link>
-                  <Link to="/phones?brand=Samsung" className="block px-4 py-2 text-sm hover:bg-accent transition-colors">
-                    Samsung
-                  </Link>
-                  <Link to="/phones?brand=Google" className="block px-4 py-2 text-sm hover:bg-accent transition-colors">
-                    Google
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div 
-              className="relative"
-              onMouseEnter={() => setTabletsOpen(true)}
-              onMouseLeave={() => setTabletsOpen(false)}
-            >
-              <Link to="/tablets" className="text-sm font-medium hover:text-primary transition-colors">
-                Tablets
-              </Link>
-              {tabletsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-popover border rounded-lg shadow-lg py-2 z-50">
-                  <Link to="/tablets?brand=Apple" className="block px-4 py-2 text-sm hover:bg-accent transition-colors">
-                    Apple
-                  </Link>
-                  <Link to="/tablets?brand=Samsung" className="block px-4 py-2 text-sm hover:bg-accent transition-colors">
-                    Samsung
-                  </Link>
-                </div>
-              )}
-            </div>
-
             <Link to="/sell" className="text-sm font-medium text-success hover:text-success/80 transition-colors">
-              Sell Device
+              Sell
             </Link>
           </div>
         </div>
