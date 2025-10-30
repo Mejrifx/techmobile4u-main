@@ -56,7 +56,7 @@ const Home = () => {
               <img 
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
-                className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-16 scale-110"
+                className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-20 scale-110"
               />
             </div>
           </div>
