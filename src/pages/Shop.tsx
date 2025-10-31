@@ -243,7 +243,7 @@ const Shop = () => {
 
             <div>
               <h3 className="font-semibold mb-3">
-                Price Range: ${priceRange[0]} - ${priceRange[1]}
+                Price Range: £{priceRange[0]} - £{priceRange[1]}
               </h3>
               <Slider
                 value={[priceRange[0], priceRange[1]]}

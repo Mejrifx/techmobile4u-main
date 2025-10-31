@@ -96,7 +96,7 @@ const Navbar = () => {
                       <p className="font-medium text-sm">{product.name}</p>
                       <p className="text-xs text-muted-foreground">{product.brand} • {product.category}</p>
                     </div>
-                    <p className="text-sm font-semibold text-primary">${product.price}</p>
+                    <p className="text-sm font-semibold text-primary">£{product.price}</p>
                   </button>
                 ))}
               </div>
@@ -180,7 +180,7 @@ const Navbar = () => {
                       >
                         <p className="font-medium">{product.name}</p>
                         <p className="text-sm text-muted-foreground">{product.brand} • {product.category}</p>
-                        <p className="text-sm font-semibold text-primary mt-1">${product.price}</p>
+                        <p className="text-sm font-semibold text-primary mt-1">£{product.price}</p>
                       </button>
                     ))}
                   </div>

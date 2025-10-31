@@ -50,7 +50,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {product.specs.storage} • {product.specs.color}
           </p>
         </Link>
-        <p className="text-2xl font-bold">${product.price}</p>
+        <p className="text-2xl font-bold">£{product.price}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button 
