@@ -6,8 +6,6 @@ import { useState, useEffect, useRef } from "react";
 import { mockProducts } from "@/data/mockProducts";
 
 const Navbar = () => {
-  const [phonesOpen, setPhonesOpen] = useState(false);
-  const [tabletsOpen, setTabletsOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<any[]>([]);
