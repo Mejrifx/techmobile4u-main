@@ -35,8 +35,9 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-between gap-4">
-        <div className="flex items-center gap-4 md:gap-8">
+      <div className="container flex h-20 items-center justify-between gap-2 md:gap-4">
+        <div className="flex items-center gap-2 md:gap-8">
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img 
               src="/techmobile4u-main-logo.svg" 
@@ -45,6 +46,7 @@ const Navbar = () => {
             />
           </Link>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             <Link to="/" className="relative text-sm font-medium hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-[width] after:duration-300">
               Home
@@ -55,6 +57,19 @@ const Navbar = () => {
             <Link to="/sell" className="relative text-sm font-medium hover:text-primary transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary after:transition-[width] after:duration-300">
               Sell
             </Link>
+          </div>
+
+          {/* Mobile Navigation Links */}
+          <div className="flex md:hidden items-center gap-0">
+            <div className="h-6 w-px bg-border mx-1"></div>
+            <Link to="/shop" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors">
+              Shop
+            </Link>
+            <div className="h-6 w-px bg-border mx-1"></div>
+            <Link to="/sell" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors">
+              Sell
+            </Link>
+            <div className="h-6 w-px bg-border mx-1"></div>
           </div>
         </div>
 
@@ -104,28 +119,34 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search Icon - Mobile */}
-        <div className="lg:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileSearchOpen(true)}
-          >
-            <Search className="h-5 w-5" />
-          </Button>
-        </div>
+        <div className="flex items-center">
+          {/* Search Icon - Mobile */}
+          <div className="lg:hidden flex items-center">
+            <div className="h-6 w-px bg-border mx-2"></div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileSearchOpen(true)}
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+            <div className="h-6 w-px bg-border mx-2"></div>
+          </div>
 
-        <div className="flex items-center gap-2 md:gap-4">
-          <Button variant="ghost" size="icon" asChild>
-            <Link to="/cart">
-              <ShoppingCart className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link to="/account">
-              <User className="h-5 w-5" />
-            </Link>
-          </Button>
+          {/* Cart and User Icons */}
+          <div className="flex items-center">
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/cart">
+                <ShoppingCart className="h-5 w-5" />
+              </Link>
+            </Button>
+            <div className="h-6 w-px bg-border mx-2"></div>
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/account">
+                <User className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
 
