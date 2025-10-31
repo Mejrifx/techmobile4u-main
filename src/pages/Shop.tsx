@@ -20,12 +20,41 @@ const Shop = () => {
 
   const brands = ['all', ...Array.from(new Set(mockProducts.map(p => p.brand)))];
   
-  // Get iPhone models grouped by series
+  // Get iPhone models grouped by series - iPhone SE at the bottom
   const iphoneModels = mockProducts
     .filter(p => p.brand === 'Apple' && p.category === 'phone')
     .map(p => p.name)
     .sort((a, b) => {
+      // iPhone SE models go to the bottom
+      const isSEA = a.includes('iPhone SE');
+      const isSEB = b.includes('iPhone SE');
+      if (isSEA && !isSEB) return 1; // SE goes after
+      if (!isSEA && isSEB) return -1; // Non-SE goes before
+      if (isSEA && isSEB) {
+        // Both are SE, sort by year (2022 > 2020)
+        const yearA = parseInt(a.match(/\d{4}/)?.[0] || '0');
+        const yearB = parseInt(b.match(/\d{4}/)?.[0] || '0');
+        return yearB - yearA;
+      }
       // Extract numbers for sorting (iPhone 16 > iPhone 15 > iPhone 14, etc.)
+      const numA = parseInt(a.match(/\d+/)?.[0] || '0');
+      const numB = parseInt(b.match(/\d+/)?.[0] || '0');
+      if (numA !== numB) return numB - numA; // Higher number first
+      return a.localeCompare(b);
+    });
+
+  // Get Samsung models grouped by series
+  const samsungModels = mockProducts
+    .filter(p => p.brand === 'Samsung' && p.category === 'phone')
+    .map(p => p.name)
+    .sort((a, b) => {
+      // Extract series and numbers for sorting
+      // Galaxy S series first, then Z series
+      const seriesA = a.includes('Galaxy S') ? 0 : a.includes('Galaxy Z') ? 1 : 2;
+      const seriesB = b.includes('Galaxy S') ? 0 : b.includes('Galaxy Z') ? 1 : 2;
+      if (seriesA !== seriesB) return seriesA - seriesB;
+      
+      // Extract numbers for sorting (S25 > S24 > S23, etc.)
       const numA = parseInt(a.match(/\d+/)?.[0] || '0');
       const numB = parseInt(b.match(/\d+/)?.[0] || '0');
       if (numA !== numB) return numB - numA; // Higher number first
@@ -153,7 +182,7 @@ const Shop = () => {
                     className="w-full justify-start"
                     onClick={() => {
                       setSelectedBrand(brand);
-                      if (brand !== 'Apple') setSelectedModel('all');
+                      if (brand !== 'Apple' && brand !== 'Samsung') setSelectedModel('all');
                     }}
                   >
                     {brand === 'all' ? 'All Brands' : brand}
@@ -174,6 +203,31 @@ const Shop = () => {
                     All iPhone Models
                   </Button>
                   {iphoneModels.map(model => (
+                    <Button
+                      key={model}
+                      variant={selectedModel === model ? 'default' : 'outline'}
+                      className="w-full justify-start text-sm"
+                      onClick={() => setSelectedModel(model)}
+                    >
+                      {model}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedBrand === 'Samsung' && selectedCategory === 'phone' && (
+              <div>
+                <h3 className="font-semibold mb-3">Samsung Model</h3>
+                <div className="space-y-2 max-h-96 overflow-y-auto">
+                  <Button
+                    variant={selectedModel === 'all' ? 'default' : 'outline'}
+                    className="w-full justify-start"
+                    onClick={() => setSelectedModel('all')}
+                  >
+                    All Samsung Models
+                  </Button>
+                  {samsungModels.map(model => (
                     <Button
                       key={model}
                       variant={selectedModel === model ? 'default' : 'outline'}
