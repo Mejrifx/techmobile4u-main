@@ -1,32 +1,83 @@
 import { Truck, ShieldCheck, BadgeCheck, Percent } from "lucide-react";
 
 const PromoBar = () => {
+  const promos = [
+    {
+      icon: Truck,
+      text: "Free Delivery On All Orders",
+    },
+    {
+      icon: ShieldCheck,
+      text: "Free 12 Month Warranty",
+    },
+    {
+      icon: BadgeCheck,
+      text: "Quality Assurance On Devices",
+    },
+    {
+      icon: Percent,
+      text: "10% Off On First Orders",
+    },
+  ];
+
+  // Duplicate promos for seamless infinite scroll
+  const scrollingPromos = [...promos, ...promos];
+
   return (
-    <div className="border-b bg-background/90">
-      <div className="container">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 py-2 md:py-2.5">
-          <div className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-foreground/80">
-            <Truck className="h-3.5 w-3.5 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
-            <span className="leading-tight">Free Delivery On All Orders</span>
+    <>
+      <style>{`
+        @keyframes infinite-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .promo-scroll {
+          animation: infinite-scroll 20s linear infinite;
+          display: flex;
+        }
+      `}</style>
+      <div className="border-b bg-background/90 overflow-hidden">
+        <div className="container relative">
+          {/* Mobile Carousel - Infinite Scroll */}
+          <div className="lg:hidden py-3 relative overflow-hidden">
+            <div className="promo-scroll whitespace-nowrap">
+              {scrollingPromos.map((promo, index) => {
+                const Icon = promo.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 text-sm text-foreground/80 flex-shrink-0 px-8"
+                  >
+                    <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span>{promo.text}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-foreground/80">
-            <ShieldCheck className="h-3.5 w-3.5 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
-            <span className="leading-tight">Free 12 Month Warranty</span>
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-foreground/80">
-            <BadgeCheck className="h-3.5 w-3.5 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
-            <span className="leading-tight">Quality Assurance On Devices</span>
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-foreground/80">
-            <Percent className="h-3.5 w-3.5 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
-            <span className="leading-tight">10% Off On First Orders</span>
+
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-3 py-2.5">
+            {promos.map((promo, index) => {
+              const Icon = promo.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-foreground/80"
+                >
+                  <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                  <span>{promo.text}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default PromoBar;
-
-
