@@ -51,26 +51,26 @@ const Home = () => {
           </div>
 
           {/* Mobile layout */}
-          <div className="flex flex-col items-center text-center space-y-6 lg:hidden">
+          <div className="flex flex-col items-center text-center space-y-3 lg:hidden">
             {/* Text at top */}
             <h1 className="text-3xl sm:text-4xl font-bold leading-tight font-berthold">
               Buy & Sell Premium Devices
             </h1>
             
+            {/* Description text above logo */}
+            <p className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md">
+              Shop the latest phones and tablets or sell your used devices for instant cash. 
+              Trusted, secure, and hassle-free.
+            </p>
+            
             {/* Logo in middle - Dominant */}
-            <div className="flex justify-center py-4">
+            <div className="flex justify-center py-2">
               <img 
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-32 sm:h-40 w-auto opacity-95"
               />
             </div>
-            
-            {/* Description text below logo */}
-            <p className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md">
-              Shop the latest phones and tablets or sell your used devices for instant cash. 
-              Trusted, secure, and hassle-free.
-            </p>
             
             {/* Mobile-optimized buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
