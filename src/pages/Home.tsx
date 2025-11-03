@@ -53,7 +53,7 @@ const Home = () => {
           {/* Mobile layout */}
           <div className="flex flex-col items-center text-center space-y-3 lg:hidden">
             {/* Text at top */}
-            <h1 className="text-4xl sm:text-5xl font-bold leading-tight font-berthold max-w-sm mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight max-w-sm mx-auto" style={{ fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif" }}>
               Buy & Sell<br />Premium Devices
             </h1>
             
