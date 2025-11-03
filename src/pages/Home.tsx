@@ -18,20 +18,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white" style={{backgroundColor: '#7bc5f6'}}>
         <div className="container py-8 md:py-16">
-          {/* Mobile-first layout */}
-          <div className="flex flex-col items-center text-center space-y-8 lg:flex-row lg:items-center lg:justify-between lg:text-left lg:space-y-0 lg:gap-12">
-            
-            {/* Mobile Logo - Top Center */}
-            <div className="lg:hidden flex justify-center">
-              <img 
-                src="/techmobile4u-main-logo.svg" 
-                alt="TechMobile4U" 
-                className="h-16 w-auto opacity-95"
-              />
-            </div>
-            
-            {/* Content */}
-            <div className="max-w-2xl lg:max-w-2xl space-y-6">
+          {/* Desktop layout */}
+          <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
+            {/* Desktop Content */}
+            <div className="max-w-2xl space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-berthold">
                 Buy & Sell Premium Devices
               </h1>
@@ -40,7 +30,6 @@ const Home = () => {
                 Trusted, secure, and hassle-free.
               </p>
               
-              {/* Mobile-optimized buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
                 <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
                   <Link to="/shop">Shop Now</Link>
@@ -52,12 +41,45 @@ const Home = () => {
             </div>
             
             {/* Desktop Logo - Right Side */}
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <img 
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-20 scale-110"
               />
+            </div>
+          </div>
+
+          {/* Mobile layout */}
+          <div className="flex flex-col items-center text-center space-y-6 lg:hidden">
+            {/* Text at top */}
+            <h1 className="text-3xl sm:text-4xl font-bold leading-tight font-berthold">
+              Buy & Sell Premium Devices
+            </h1>
+            
+            {/* Logo in middle - Dominant */}
+            <div className="flex justify-center py-4">
+              <img 
+                src="/techmobile4u-main-logo.svg" 
+                alt="TechMobile4U" 
+                className="h-32 sm:h-40 w-auto opacity-95"
+              />
+            </div>
+            
+            {/* Description text below logo */}
+            <p className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md">
+              Shop the latest phones and tablets or sell your used devices for instant cash. 
+              Trusted, secure, and hassle-free.
+            </p>
+            
+            {/* Mobile-optimized buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
+                <Link to="/shop">Shop Now</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base py-3 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
+                <Link to="/sell">Sell Your Device</Link>
+              </Button>
             </div>
           </div>
         </div>
