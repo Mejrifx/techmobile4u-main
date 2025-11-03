@@ -20,8 +20,8 @@ const PromoBar = () => {
     },
   ];
 
-  // Duplicate promos for seamless infinite scroll
-  const scrollingPromos = [...promos, ...promos];
+  // Create many duplicates for seamless infinite scroll (4 sets = 16 items)
+  const scrollingPromos = [...promos, ...promos, ...promos, ...promos];
 
   return (
     <>
@@ -31,25 +31,26 @@ const PromoBar = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-25%);
           }
         }
         .promo-scroll {
-          animation: infinite-scroll 20s linear infinite;
+          animation: infinite-scroll 13.33s linear infinite;
           display: flex;
+          will-change: transform;
         }
       `}</style>
       <div className="border-b bg-background/90 overflow-hidden">
-        <div className="container relative">
-          {/* Mobile Carousel - Infinite Scroll */}
-          <div className="lg:hidden py-3 relative overflow-hidden">
-            <div className="promo-scroll whitespace-nowrap">
-              {scrollingPromos.map((promo, index) => {
+        {/* Desktop Grid */}
+        <div className="hidden lg:block">
+          <div className="container">
+            <div className="grid grid-cols-4 gap-3 py-2.5">
+              {promos.map((promo, index) => {
                 const Icon = promo.icon;
                 return (
                   <div
                     key={index}
-                    className="flex items-center gap-2 text-sm text-foreground/80 flex-shrink-0 px-8"
+                    className="flex items-center gap-2 text-sm text-foreground/80"
                   >
                     <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
                     <span>{promo.text}</span>
@@ -58,15 +59,17 @@ const PromoBar = () => {
               })}
             </div>
           </div>
+        </div>
 
-          {/* Desktop Grid */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-3 py-2.5">
-            {promos.map((promo, index) => {
+        {/* Mobile Carousel - Infinite Scroll */}
+        <div className="lg:hidden py-3 relative overflow-hidden w-full">
+          <div className="promo-scroll whitespace-nowrap">
+            {scrollingPromos.map((promo, index) => {
               const Icon = promo.icon;
               return (
                 <div
                   key={index}
-                  className="flex items-center gap-2 text-sm text-foreground/80"
+                  className="flex items-center justify-center gap-2 text-sm text-foreground/80 flex-shrink-0 w-screen"
                 >
                   <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
                   <span>{promo.text}</span>
