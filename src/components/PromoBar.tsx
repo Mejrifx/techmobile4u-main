@@ -20,8 +20,8 @@ const PromoBar = () => {
     },
   ];
 
-  // Create many duplicates for seamless infinite scroll (4 sets = 16 items)
-  const scrollingPromos = [...promos, ...promos, ...promos, ...promos];
+  // Duplicate for seamless loop - 2 sets for perfect loop
+  const scrollingPromos = [...promos, ...promos];
 
   return (
     <>
@@ -31,13 +31,21 @@ const PromoBar = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-25%);
+            transform: translateX(-50%);
           }
         }
         .promo-scroll {
-          animation: infinite-scroll 13.33s linear infinite;
+          animation: infinite-scroll 12s linear infinite;
           display: flex;
           will-change: transform;
+          width: max-content;
+        }
+        .promo-item {
+          width: 100vw;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       `}</style>
       <div className="border-b bg-background/90 overflow-hidden">
@@ -63,16 +71,16 @@ const PromoBar = () => {
 
         {/* Mobile Carousel - Infinite Scroll */}
         <div className="lg:hidden py-3 relative overflow-hidden w-full">
-          <div className="promo-scroll whitespace-nowrap">
+          <div className="promo-scroll">
             {scrollingPromos.map((promo, index) => {
               const Icon = promo.icon;
               return (
                 <div
                   key={index}
-                  className="flex items-center justify-center gap-2 text-sm text-foreground/80 flex-shrink-0 w-screen"
+                  className="promo-item gap-2 text-sm text-foreground/80"
                 >
                   <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
-                  <span>{promo.text}</span>
+                  <span className="whitespace-nowrap">{promo.text}</span>
                 </div>
               );
             })}
