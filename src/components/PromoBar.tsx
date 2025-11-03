@@ -20,8 +20,8 @@ const PromoBar = () => {
     },
   ];
 
-  // Duplicate for seamless loop - 2 sets for perfect loop
-  const scrollingPromos = [...promos, ...promos];
+  // Create 4 duplicates for truly seamless infinite scroll (16 items total)
+  const scrollingPromos = [...promos, ...promos, ...promos, ...promos];
 
   return (
     <>
@@ -31,11 +31,11 @@ const PromoBar = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-25%);
           }
         }
         .promo-scroll {
-          animation: infinite-scroll 12s linear infinite;
+          animation: infinite-scroll 20s linear infinite;
           display: flex;
           will-change: transform;
           width: max-content;
@@ -46,6 +46,7 @@ const PromoBar = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 0;
         }
       `}</style>
       <div className="border-b bg-background/90 overflow-hidden">
@@ -77,7 +78,7 @@ const PromoBar = () => {
               return (
                 <div
                   key={index}
-                  className="promo-item gap-2 text-sm text-foreground/80"
+                  className="promo-item gap-1.5 text-sm text-foreground/80"
                 >
                   <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
                   <span className="whitespace-nowrap">{promo.text}</span>
