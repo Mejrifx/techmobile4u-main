@@ -35,7 +35,7 @@ const PromoBar = () => {
           }
         }
         .promo-scroll {
-          animation: infinite-scroll 20s linear infinite;
+          animation: infinite-scroll 30s linear infinite;
           display: flex;
           will-change: transform;
           width: max-content;
@@ -78,7 +78,7 @@ const PromoBar = () => {
               return (
                 <div
                   key={index}
-                  className="promo-item gap-1.5 text-sm text-foreground/80"
+                  className="promo-item gap-1 text-sm text-foreground/80"
                 >
                   <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
                   <span className="whitespace-nowrap">{promo.text}</span>
