@@ -53,8 +53,8 @@ const Home = () => {
           {/* Mobile layout */}
           <div className="flex flex-col items-center text-center space-y-3 lg:hidden">
             {/* Text at top */}
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight font-berthold">
-              Buy & Sell Premium Devices
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight font-berthold max-w-sm mx-auto">
+              Buy & Sell<br />Premium Devices
             </h1>
             
             {/* Description text above logo */}
