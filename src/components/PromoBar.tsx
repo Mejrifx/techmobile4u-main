@@ -31,7 +31,7 @@ const PromoBar = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-25%);
+            transform: translateX(calc(-100% / 4));
           }
         }
         .promo-scroll {
@@ -41,12 +41,12 @@ const PromoBar = () => {
           width: max-content;
         }
         .promo-item {
-          width: 100vw;
           flex-shrink: 0;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0;
+          padding: 0 1rem;
+          white-space: nowrap;
         }
       `}</style>
       <div className="border-b bg-background/90 overflow-hidden">
@@ -80,7 +80,7 @@ const PromoBar = () => {
                   key={index}
                   className="promo-item text-sm text-foreground/80"
                 >
-                  <Icon className="h-4 w-4 text-accent flex-shrink-0 mr-0.5" aria-hidden="true" />
+                  <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" style={{ marginRight: '2px' }} />
                   <span className="whitespace-nowrap">{promo.text}</span>
                 </div>
               );
