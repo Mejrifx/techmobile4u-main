@@ -32,7 +32,7 @@ const Home = () => {
             
             {/* Content */}
             <div className="max-w-2xl lg:max-w-2xl space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-berthold">
                 Buy & Sell Premium Devices
               </h1>
               <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed">
