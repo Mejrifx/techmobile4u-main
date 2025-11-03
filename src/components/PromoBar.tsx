@@ -78,9 +78,9 @@ const PromoBar = () => {
               return (
                 <div
                   key={index}
-                  className="promo-item gap-1 text-sm text-foreground/80"
+                  className="promo-item text-sm text-foreground/80"
                 >
-                  <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                  <Icon className="h-4 w-4 text-accent flex-shrink-0 mr-0.5" aria-hidden="true" />
                   <span className="whitespace-nowrap">{promo.text}</span>
                 </div>
               );
