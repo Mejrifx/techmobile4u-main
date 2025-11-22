@@ -43,8 +43,8 @@ const Home = () => {
   // Desktop animations
   useEffect(() => {
     // Calculate typewriter completion time: delay (0.3) + text length * speed (0.05)
-    // "Buy & Sell\nPremium Devices" ≈ 30 chars = 1.5s + 0.3s delay = 1.8s total
-    const tl = gsap.timeline({ delay: 1.8 }); // Start right after typewriter completes
+    // "Buy & Sell\nPremium Devices" = 25 chars = 1.25s + 0.3s delay = 1.55s total
+    const tl = gsap.timeline({ delay: 1.6 }); // Start immediately after typewriter completes
 
     // Logo glides in from right with fade
     if (desktopLogoRef.current) {
@@ -83,8 +83,8 @@ const Home = () => {
   // Mobile animations
   useEffect(() => {
     // Calculate typewriter completion time: delay (0.3) + text length * speed (0.05)
-    // "Buy & Sell\nPremium Devices" ≈ 30 chars = 1.5s + 0.3s delay = 1.8s total
-    const tl = gsap.timeline({ delay: 1.8 }); // Start right after typewriter completes
+    // "Buy & Sell\nPremium Devices" = 25 chars = 1.25s + 0.3s delay = 1.55s total
+    const tl = gsap.timeline({ delay: 1.6 }); // Start immediately after typewriter completes
 
     // Description slides in from left
     if (mobileDescRef.current) {
