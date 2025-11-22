@@ -148,23 +148,29 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <PromoBar />
-      
-      {/* Hero Section */}
-      <section 
-        className="relative overflow-hidden text-white"
+      {/* Hero Background Section - Full Top Section */}
+      <div 
+        className="relative w-full min-h-screen"
         style={{
           backgroundImage: 'url(/techmobile4u Background.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       >
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 z-0"></div>
         
-        <div className="container py-8 md:py-16 relative z-10">
+        {/* Navbar and PromoBar overlaid on hero background */}
+        <div className="relative z-10">
+          <Navbar />
+          <PromoBar />
+        </div>
+        
+        {/* Hero Content Section */}
+        <section className="relative text-white">
+          <div className="container py-8 md:py-16 relative z-10">
           {/* Desktop layout */}
           <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
             {/* Desktop Content */}
@@ -247,7 +253,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
       {/* Features */}
       <section className="py-12 md:py-16 bg-muted/50">
