@@ -182,8 +182,8 @@ const Home = () => {
             backgroundAttachment: 'fixed'
           }}
         ></div>
-        {/* Overlay for text readability - Lighter on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/5 to-black/10 z-[1] lg:from-black/20 lg:via-black/10 lg:to-black/20"></div>
+        {/* Overlay for text readability - Minimal on mobile, normal on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent z-[1] lg:from-black/20 lg:via-black/10 lg:to-black/20"></div>
         
         {/* Hero Content Section */}
         <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)] pt-32">
