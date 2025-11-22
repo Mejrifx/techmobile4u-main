@@ -171,19 +171,19 @@ const Home = () => {
         </div>
         
         {/* Hero Content Section */}
-        <section className="relative text-white">
+        <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)]">
           <div className="container py-8 md:py-16 relative z-10">
           {/* Desktop layout */}
-          <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
+          <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center lg:gap-8">
             {/* Desktop Content */}
-            <div className="max-w-2xl space-y-6">
+            <div className="max-w-4xl space-y-6 flex flex-col items-center">
               <h1 
                 ref={desktopHeadingRef}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-berthold"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight font-berthold"
               ></h1>
               <p 
                 ref={desktopDescRef}
-                className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed"
+                className="text-lg sm:text-xl md:text-2xl opacity-90 leading-relaxed max-w-3xl"
               >
                 Shop the latest phones and tablets or sell your used devices for instant cash. 
                 Trusted, secure, and hassle-free.
@@ -191,65 +191,65 @@ const Home = () => {
               
               <div 
                 ref={desktopButtonsRef}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4"
               >
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg py-4 px-8" asChild>
                   <Link to="/shop">Shop Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base py-3 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg py-4 px-8 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
                   <Link to="/sell">Sell Your Device</Link>
                 </Button>
               </div>
             </div>
             
-            {/* Desktop Logo - Right Side */}
-            <div className="flex items-center justify-center">
+            {/* Desktop Logo - Centered Below Text */}
+            <div className="flex items-center justify-center mt-4">
               <img 
                 ref={desktopLogoRef}
                 src="/Techmobile4u Logo.png" 
                 alt="TechMobile4U" 
-                className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-20 scale-110"
+                className="h-64 md:h-72 lg:h-80 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           </div>
 
           {/* Mobile layout */}
-          <div className="flex flex-col items-center text-center space-y-3 lg:hidden">
+          <div className="flex flex-col items-center justify-center text-center space-y-4 lg:hidden min-h-[60vh]">
             {/* Text at top */}
             <h1 
               ref={mobileHeadingRef}
-              className="text-4xl sm:text-5xl font-bold leading-tight max-w-sm mx-auto" 
+              className="text-5xl sm:text-6xl font-bold leading-tight max-w-md mx-auto" 
               style={{ fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif" }}
             ></h1>
             
             {/* Description text above logo */}
             <p 
               ref={mobileDescRef}
-              className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md"
+              className="text-lg sm:text-xl opacity-90 leading-relaxed max-w-lg px-4"
             >
               Shop the latest phones and tablets or sell your used devices for instant cash. 
               Trusted, secure, and hassle-free.
             </p>
             
             {/* Logo in middle - Dominant */}
-            <div className="flex justify-center py-2">
+            <div className="flex justify-center py-4">
               <img 
                 ref={mobileLogoRef}
                 src="/Techmobile4u Logo.png" 
                 alt="TechMobile4U" 
-                className="h-32 sm:h-40 w-auto opacity-95"
+                className="h-48 sm:h-56 w-auto opacity-95"
               />
             </div>
             
             {/* Mobile-optimized buttons */}
             <div 
               ref={mobileButtonsRef}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4"
             >
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg py-4 px-8" asChild>
                 <Link to="/shop">Shop Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base py-3 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg py-4 px-8 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
                 <Link to="/sell">Sell Your Device</Link>
               </Button>
             </div>
