@@ -185,7 +185,7 @@ const Home = () => {
             <div className="max-w-2xl space-y-6">
               <h1 
                 ref={desktopHeadingRef}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight font-berthold"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-berthold"
               ></h1>
               <p 
                 ref={desktopDescRef}
@@ -224,7 +224,7 @@ const Home = () => {
             {/* Text at top */}
             <h1 
               ref={mobileHeadingRef}
-              className="text-5xl sm:text-6xl font-bold leading-tight max-w-md mx-auto" 
+              className="text-4xl sm:text-5xl font-bold leading-tight max-w-md mx-auto" 
               style={{ fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif" }}
             ></h1>
             
