@@ -149,18 +149,20 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Background Section - Full Top Section */}
-      <div 
-        className="relative w-full min-h-screen"
-        style={{
-          backgroundImage: 'url(/techmobile4u%20Background.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
-      >
+      <div className="relative w-full min-h-screen overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('/techmobile4u Background.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
+          }}
+        ></div>
         {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 z-[1]"></div>
         
         {/* Navbar and PromoBar overlaid on hero background */}
         <div className="relative z-10">
