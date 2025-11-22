@@ -11,7 +11,7 @@ import { useTypewriter } from "@/hooks/use-typewriter";
 const Home = () => {
   const featuredProducts = mockProducts.slice(0, 4);
   const desktopHeadingRef = useTypewriter({ 
-    text: "Buy & Sell Premium Devices", 
+    text: "Buy & Sell\nPremium Devices", 
     speed: 0.05,
     delay: 0.3
   });
