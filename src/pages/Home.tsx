@@ -174,16 +174,16 @@ const Home = () => {
         <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)]">
           <div className="container py-8 md:py-16 relative z-10">
           {/* Desktop layout */}
-          <div className="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center lg:gap-8">
+          <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
             {/* Desktop Content */}
-            <div className="max-w-4xl space-y-6 flex flex-col items-center">
+            <div className="max-w-2xl space-y-6">
               <h1 
                 ref={desktopHeadingRef}
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight font-berthold"
               ></h1>
               <p 
                 ref={desktopDescRef}
-                className="text-lg sm:text-xl md:text-2xl opacity-90 leading-relaxed max-w-3xl"
+                className="text-lg sm:text-xl md:text-2xl opacity-90 leading-relaxed"
               >
                 Shop the latest phones and tablets or sell your used devices for instant cash. 
                 Trusted, secure, and hassle-free.
@@ -202,8 +202,8 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Desktop Logo - Centered Below Text */}
-            <div className="flex items-center justify-center mt-4">
+            {/* Desktop Logo - Right Side */}
+            <div className="flex items-center justify-center">
               <img 
                 ref={desktopLogoRef}
                 src="/Techmobile4u Logo.png" 
