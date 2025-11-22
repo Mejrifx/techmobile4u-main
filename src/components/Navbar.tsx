@@ -34,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/20 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/20 bg-background backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between gap-2 md:gap-4">
         <div className="flex items-center gap-2 md:gap-8">
           {/* Logo */}
