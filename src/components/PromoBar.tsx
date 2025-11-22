@@ -1,3 +1,4 @@
+import React from "react";
 import { Truck, ShieldCheck, BadgeCheck, Percent } from "lucide-react";
 
 const PromoBar = () => {
@@ -55,14 +56,19 @@ const PromoBar = () => {
           <div className="promo-scroll">
             {scrollingPromos.map((promo, index) => {
               const Icon = promo.icon;
+              const isLastInSet = (index + 1) % promos.length === 0;
               return (
-                <div
-                  key={index}
-                  className="promo-item text-sm text-foreground/80"
-                >
-                  <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" style={{ marginRight: '2px' }} />
-                  <span className="whitespace-nowrap">{promo.text}</span>
-                </div>
+                <React.Fragment key={index}>
+                  <div className="promo-item text-sm text-foreground/80">
+                    <Icon className="h-4 w-4 text-accent flex-shrink-0" aria-hidden="true" style={{ marginRight: '2px' }} />
+                    <span className="whitespace-nowrap">{promo.text}</span>
+                  </div>
+                  {!isLastInSet && (
+                    <div className="promo-item text-muted-foreground/40" style={{ padding: '0 0.5rem' }}>
+                      <span>|</span>
+                    </div>
+                  )}
+                </React.Fragment>
               );
             })}
           </div>

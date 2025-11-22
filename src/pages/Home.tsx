@@ -9,6 +9,9 @@ import { Smartphone, Tablet, DollarSign, Shield } from "lucide-react";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const featuredProducts = mockProducts.slice(0, 4);
@@ -30,6 +33,12 @@ const Home = () => {
   const mobileDescRef = useRef<HTMLParagraphElement>(null);
   const desktopButtonsRef = useRef<HTMLDivElement>(null);
   const mobileButtonsRef = useRef<HTMLDivElement>(null);
+  
+  // Features section refs
+  const feature1Ref = useRef<HTMLDivElement>(null);
+  const feature2Ref = useRef<HTMLDivElement>(null);
+  const feature3Ref = useRef<HTMLDivElement>(null);
+  const feature4Ref = useRef<HTMLDivElement>(null);
 
   // Desktop animations
   useEffect(() => {
@@ -103,6 +112,38 @@ const Home = () => {
         ease: "power3.out"
       }, "-=0.5");
     }
+  }, []);
+
+  // Features section animations
+  useEffect(() => {
+    const features = [feature1Ref, feature2Ref, feature3Ref, feature4Ref];
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: feature1Ref.current?.parentElement?.parentElement,
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    features.forEach((ref, index) => {
+      if (ref.current) {
+        gsap.set(ref.current, {
+          opacity: 0,
+          y: 50,
+          scale: 0.8,
+          rotation: -5
+        });
+
+        tl.to(ref.current, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotation: 0,
+          duration: 0.6,
+          ease: "back.out(1.2)"
+        }, index * 0.15);
+      }
+    });
   }, []);
 
   return (
@@ -201,22 +242,22 @@ const Home = () => {
       <section className="py-12 md:py-16 bg-muted/50">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            <div className="text-center space-y-3">
+            <div ref={feature1Ref} className="text-center space-y-3">
               <Smartphone className="h-8 w-8 md:h-12 md:w-12 mx-auto text-primary" />
               <h3 className="font-semibold text-sm md:text-base">Latest Devices</h3>
               <p className="text-xs md:text-sm text-muted-foreground">Shop newest phones and tablets</p>
             </div>
-            <div className="text-center space-y-3">
+            <div ref={feature2Ref} className="text-center space-y-3">
               <Shield className="h-8 w-8 md:h-12 md:w-12 mx-auto text-primary" />
               <h3 className="font-semibold text-sm md:text-base">Certified Quality</h3>
               <p className="text-xs md:text-sm text-muted-foreground">All devices are tested and verified</p>
             </div>
-            <div className="text-center space-y-3">
+            <div ref={feature3Ref} className="text-center space-y-3">
               <DollarSign className="h-8 w-8 md:h-12 md:w-12 mx-auto text-success" />
               <h3 className="font-semibold text-sm md:text-base">Instant Quotes</h3>
               <p className="text-xs md:text-sm text-muted-foreground">Get paid for your used devices</p>
             </div>
-            <div className="text-center space-y-3">
+            <div ref={feature4Ref} className="text-center space-y-3">
               <Tablet className="h-8 w-8 md:h-12 md:w-12 mx-auto text-primary" />
               <h3 className="font-semibold text-sm md:text-base">Wide Selection</h3>
               <p className="text-xs md:text-sm text-muted-foreground">Apple, Samsung, Google & more</p>
