@@ -186,7 +186,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 z-[1]"></div>
         
         {/* Hero Content Section */}
-        <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)]">
+        <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)] pt-32">
           <div className="container py-8 md:py-16 relative z-10">
           {/* Desktop layout */}
           <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
