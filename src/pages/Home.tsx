@@ -152,8 +152,19 @@ const Home = () => {
       <PromoBar />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white" style={{backgroundColor: 'hsl(221, 83%, 22%)'}}>
-        <div className="container py-8 md:py-16">
+      <section 
+        className="relative overflow-hidden text-white"
+        style={{
+          backgroundImage: 'url(/techmobile4u Background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 z-0"></div>
+        
+        <div className="container py-8 md:py-16 relative z-10">
           {/* Desktop layout */}
           <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
             {/* Desktop Content */}
