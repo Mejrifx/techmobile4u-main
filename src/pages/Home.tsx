@@ -42,15 +42,18 @@ const Home = () => {
 
   // Desktop animations
   useEffect(() => {
-    const tl = gsap.timeline({ delay: 1.5 }); // Start after typewriter
+    // Calculate typewriter completion time: delay (0.3) + text length * speed (0.05)
+    // "Buy & Sell\nPremium Devices" ≈ 30 chars = 1.5s + 0.3s delay = 1.8s total
+    const tl = gsap.timeline({ delay: 1.8 }); // Start right after typewriter completes
 
-    // Logo fades in - smooth and consistent
+    // Logo glides in from right with fade
     if (desktopLogoRef.current) {
-      gsap.set(desktopLogoRef.current, { opacity: 0 });
+      gsap.set(desktopLogoRef.current, { x: 300, opacity: 0 });
       tl.to(desktopLogoRef.current, {
+        x: 0,
         opacity: 0.9,
-        duration: 1.5,
-        ease: "power1.out"
+        duration: 1.2,
+        ease: "power2.out"
       });
     }
 
@@ -79,7 +82,9 @@ const Home = () => {
 
   // Mobile animations
   useEffect(() => {
-    const tl = gsap.timeline({ delay: 1.5 }); // Start after typewriter
+    // Calculate typewriter completion time: delay (0.3) + text length * speed (0.05)
+    // "Buy & Sell\nPremium Devices" ≈ 30 chars = 1.5s + 0.3s delay = 1.8s total
+    const tl = gsap.timeline({ delay: 1.8 }); // Start right after typewriter completes
 
     // Description slides in from left
     if (mobileDescRef.current) {
@@ -92,13 +97,14 @@ const Home = () => {
       });
     }
 
-    // Logo fades in - smooth and consistent
+    // Logo glides in from right with fade
     if (mobileLogoRef.current) {
-      gsap.set(mobileLogoRef.current, { opacity: 0 });
+      gsap.set(mobileLogoRef.current, { x: 300, opacity: 0 });
       tl.to(mobileLogoRef.current, {
+        x: 0,
         opacity: 0.95,
-        duration: 1.5,
-        ease: "power1.out"
+        duration: 1.2,
+        ease: "power2.out"
       }, "-=0.3");
     }
 
