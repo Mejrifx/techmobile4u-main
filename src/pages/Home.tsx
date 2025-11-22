@@ -152,7 +152,7 @@ const Home = () => {
       <PromoBar />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white" style={{backgroundColor: '#7bc5f6'}}>
+      <section className="relative overflow-hidden text-white" style={{backgroundColor: 'hsl(221, 83%, 22%)'}}>
         <div className="container py-8 md:py-16">
           {/* Desktop layout */}
           <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
@@ -187,7 +187,7 @@ const Home = () => {
             <div className="flex items-center justify-center">
               <img 
                 ref={desktopLogoRef}
-                src="/techmobile4u-main-logo.svg" 
+                src="/Techmobile4u Logo.png" 
                 alt="TechMobile4U" 
                 className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-20 scale-110"
               />
@@ -216,7 +216,7 @@ const Home = () => {
             <div className="flex justify-center py-2">
               <img 
                 ref={mobileLogoRef}
-                src="/techmobile4u-main-logo.svg" 
+                src="/Techmobile4u Logo.png" 
                 alt="TechMobile4U" 
                 className="h-32 sm:h-40 w-auto opacity-95"
               />
@@ -284,7 +284,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 text-white" style={{backgroundColor: '#7bc5f6'}}>
+      <section className="py-12 md:py-20 text-white" style={{backgroundColor: 'hsl(221, 83%, 22%)'}}>
         <div className="container text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Got a Device to Sell?
