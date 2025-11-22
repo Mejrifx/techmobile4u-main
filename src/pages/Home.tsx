@@ -7,6 +7,8 @@ import ProductCard from "@/components/ProductCard";
 import { mockProducts } from "@/data/mockProducts";
 import { Smartphone, Tablet, DollarSign, Shield } from "lucide-react";
 import { useTypewriter } from "@/hooks/use-typewriter";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const Home = () => {
   const featuredProducts = mockProducts.slice(0, 4);
@@ -20,6 +22,90 @@ const Home = () => {
     speed: 0.05,
     delay: 0.3
   });
+
+  // Animation refs
+  const desktopLogoRef = useRef<HTMLImageElement>(null);
+  const mobileLogoRef = useRef<HTMLImageElement>(null);
+  const desktopDescRef = useRef<HTMLParagraphElement>(null);
+  const mobileDescRef = useRef<HTMLParagraphElement>(null);
+  const desktopButtonsRef = useRef<HTMLDivElement>(null);
+  const mobileButtonsRef = useRef<HTMLDivElement>(null);
+
+  // Desktop animations
+  useEffect(() => {
+    const tl = gsap.timeline({ delay: 1.5 }); // Start after typewriter
+
+    // Logo slides in from right
+    if (desktopLogoRef.current) {
+      gsap.set(desktopLogoRef.current, { x: 200, opacity: 0 });
+      tl.to(desktopLogoRef.current, {
+        x: 0,
+        opacity: 0.9,
+        duration: 1,
+        ease: "power3.out"
+      });
+    }
+
+    // Description slides in from left
+    if (desktopDescRef.current) {
+      gsap.set(desktopDescRef.current, { x: -100, opacity: 0 });
+      tl.to(desktopDescRef.current, {
+        x: 0,
+        opacity: 0.9,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.5");
+    }
+
+    // Buttons slide in from left
+    if (desktopButtonsRef.current) {
+      gsap.set(desktopButtonsRef.current, { x: -100, opacity: 0 });
+      tl.to(desktopButtonsRef.current, {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.5");
+    }
+  }, []);
+
+  // Mobile animations
+  useEffect(() => {
+    const tl = gsap.timeline({ delay: 1.5 }); // Start after typewriter
+
+    // Description slides in from left
+    if (mobileDescRef.current) {
+      gsap.set(mobileDescRef.current, { x: -100, opacity: 0 });
+      tl.to(mobileDescRef.current, {
+        x: 0,
+        opacity: 0.9,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+    }
+
+    // Logo slides in from right
+    if (mobileLogoRef.current) {
+      gsap.set(mobileLogoRef.current, { x: 200, opacity: 0 });
+      tl.to(mobileLogoRef.current, {
+        x: 0,
+        opacity: 0.95,
+        duration: 1,
+        ease: "power3.out"
+      }, "-=0.3");
+    }
+
+    // Buttons slide in from left
+    if (mobileButtonsRef.current) {
+      gsap.set(mobileButtonsRef.current, { x: -100, opacity: 0 });
+      tl.to(mobileButtonsRef.current, {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.5");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -37,12 +123,18 @@ const Home = () => {
                 ref={desktopHeadingRef}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-berthold"
               ></h1>
-              <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed">
+              <p 
+                ref={desktopDescRef}
+                className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed"
+              >
                 Shop the latest phones and tablets or sell your used devices for instant cash. 
                 Trusted, secure, and hassle-free.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+              <div 
+                ref={desktopButtonsRef}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
+              >
                 <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
                   <Link to="/shop">Shop Now</Link>
                 </Button>
@@ -55,6 +147,7 @@ const Home = () => {
             {/* Desktop Logo - Right Side */}
             <div className="flex items-center justify-center">
               <img 
+                ref={desktopLogoRef}
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-48 md:h-56 lg:h-64 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300 transform -translate-x-20 scale-110"
@@ -72,7 +165,10 @@ const Home = () => {
             ></h1>
             
             {/* Description text above logo */}
-            <p className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md">
+            <p 
+              ref={mobileDescRef}
+              className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md"
+            >
               Shop the latest phones and tablets or sell your used devices for instant cash. 
               Trusted, secure, and hassle-free.
             </p>
@@ -80,6 +176,7 @@ const Home = () => {
             {/* Logo in middle - Dominant */}
             <div className="flex justify-center py-2">
               <img 
+                ref={mobileLogoRef}
                 src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-32 sm:h-40 w-auto opacity-95"
@@ -87,7 +184,10 @@ const Home = () => {
             </div>
             
             {/* Mobile-optimized buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+            <div 
+              ref={mobileButtonsRef}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
+            >
               <Button size="lg" variant="secondary" className="w-full sm:w-auto text-base py-3" asChild>
                 <Link to="/shop">Shop Now</Link>
               </Button>
