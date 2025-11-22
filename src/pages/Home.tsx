@@ -37,7 +37,7 @@ const Home = () => {
 
     // Logo slides in from right
     if (desktopLogoRef.current) {
-      gsap.set(desktopLogoRef.current, { x: 200, opacity: 0 });
+      gsap.set(desktopLogoRef.current, { x: 200, opacity: 0.5 });
       tl.to(desktopLogoRef.current, {
         x: 0,
         opacity: 0.9,
@@ -86,7 +86,7 @@ const Home = () => {
 
     // Logo slides in from right
     if (mobileLogoRef.current) {
-      gsap.set(mobileLogoRef.current, { x: 200, opacity: 0 });
+      gsap.set(mobileLogoRef.current, { x: 200, opacity: 0.5 });
       tl.to(mobileLogoRef.current, {
         x: 0,
         opacity: 0.95,
