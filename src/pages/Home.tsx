@@ -35,14 +35,13 @@ const Home = () => {
   useEffect(() => {
     const tl = gsap.timeline({ delay: 1.5 }); // Start after typewriter
 
-    // Logo slides in from right
+    // Logo fades in
     if (desktopLogoRef.current) {
-      gsap.set(desktopLogoRef.current, { x: 200, opacity: 0.5 });
+      gsap.set(desktopLogoRef.current, { opacity: 0 });
       tl.to(desktopLogoRef.current, {
-        x: 0,
         opacity: 0.9,
-        duration: 1,
-        ease: "power3.out"
+        duration: 1.2,
+        ease: "power2.out"
       });
     }
 
@@ -84,14 +83,13 @@ const Home = () => {
       });
     }
 
-    // Logo slides in from right
+    // Logo fades in
     if (mobileLogoRef.current) {
-      gsap.set(mobileLogoRef.current, { x: 200, opacity: 0.5 });
+      gsap.set(mobileLogoRef.current, { opacity: 0 });
       tl.to(mobileLogoRef.current, {
-        x: 0,
         opacity: 0.95,
-        duration: 1,
-        ease: "power3.out"
+        duration: 1.2,
+        ease: "power2.out"
       }, "-=0.3");
     }
 
