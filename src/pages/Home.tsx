@@ -178,8 +178,7 @@ const Home = () => {
             backgroundImage: `url('/Techmobile4u Background (mobile).png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
+            backgroundRepeat: 'no-repeat'
           }}
         ></div>
         {/* Overlay for text readability - Minimal on mobile, normal on desktop */}
