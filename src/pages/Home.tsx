@@ -6,9 +6,20 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { mockProducts } from "@/data/mockProducts";
 import { Smartphone, Tablet, DollarSign, Shield } from "lucide-react";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const Home = () => {
   const featuredProducts = mockProducts.slice(0, 4);
+  const desktopHeadingRef = useTypewriter({ 
+    text: "Buy & Sell Premium Devices", 
+    speed: 0.05,
+    delay: 0.3
+  });
+  const mobileHeadingRef = useTypewriter({ 
+    text: "Buy & Sell\nPremium Devices", 
+    speed: 0.05,
+    delay: 0.3
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -22,9 +33,10 @@ const Home = () => {
           <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
             {/* Desktop Content */}
             <div className="max-w-2xl space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-berthold">
-                Buy & Sell Premium Devices
-              </h1>
+              <h1 
+                ref={desktopHeadingRef}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-berthold"
+              ></h1>
               <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed">
                 Shop the latest phones and tablets or sell your used devices for instant cash. 
                 Trusted, secure, and hassle-free.
@@ -53,9 +65,11 @@ const Home = () => {
           {/* Mobile layout */}
           <div className="flex flex-col items-center text-center space-y-3 lg:hidden">
             {/* Text at top */}
-            <h1 className="text-4xl sm:text-5xl font-bold leading-tight max-w-sm mx-auto" style={{ fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif" }}>
-              Buy & Sell<br />Premium Devices
-            </h1>
+            <h1 
+              ref={mobileHeadingRef}
+              className="text-4xl sm:text-5xl font-bold leading-tight max-w-sm mx-auto" 
+              style={{ fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif" }}
+            ></h1>
             
             {/* Description text above logo */}
             <p className="text-base sm:text-lg opacity-90 leading-relaxed max-w-md">
