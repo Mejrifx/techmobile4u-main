@@ -152,7 +152,7 @@ const Home = () => {
       <div 
         className="relative w-full min-h-screen"
         style={{
-          backgroundImage: 'url(/techmobile4u Background.png)',
+          backgroundImage: 'url(/techmobile4u%20Background.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -160,7 +160,7 @@ const Home = () => {
         }}
       >
         {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 z-0"></div>
         
         {/* Navbar and PromoBar overlaid on hero background */}
         <div className="relative z-10">
