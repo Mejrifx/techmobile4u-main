@@ -50,7 +50,7 @@ const PromoBar = () => {
           white-space: nowrap;
         }
       `}</style>
-      <div className="border-b bg-background/90 overflow-hidden">
+      <div className="sticky top-20 z-40 border-b bg-background/90 overflow-hidden">
         {/* Infinite Scroll Carousel - Desktop & Mobile */}
         <div className="py-3 relative overflow-hidden w-full">
           <div className="promo-scroll">

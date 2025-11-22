@@ -156,11 +156,22 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Background Section - Full Top Section */}
       <div className="relative w-full min-h-screen overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Desktop */}
         <div 
-          className="absolute inset-0 z-0"
+          className="hidden lg:block absolute inset-0 z-0"
           style={{
             backgroundImage: `url('/techmobile4u Background.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
+          }}
+        ></div>
+        {/* Background Image - Mobile */}
+        <div 
+          className="lg:hidden absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('/Techmobile4u Background (mobile).png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
