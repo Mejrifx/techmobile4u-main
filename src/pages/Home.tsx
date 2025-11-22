@@ -154,6 +154,10 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Navbar and PromoBar - Fixed at top */}
+      <Navbar />
+      <PromoBar />
+      
       {/* Hero Background Section - Full Top Section */}
       <div className="relative w-full min-h-screen overflow-hidden">
         {/* Background Image - Desktop */}
@@ -180,12 +184,6 @@ const Home = () => {
         ></div>
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 z-[1]"></div>
-        
-        {/* Navbar and PromoBar overlaid on hero background */}
-        <div className="relative z-10">
-          <Navbar />
-          <PromoBar />
-        </div>
         
         {/* Hero Content Section */}
         <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)]">
