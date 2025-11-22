@@ -173,12 +173,13 @@ const Home = () => {
         ></div>
         {/* Background Image - Mobile */}
         <div 
-          className="lg:hidden absolute inset-0 z-0"
+          className="lg:hidden absolute inset-0 z-0 w-full h-full"
           style={{
             backgroundImage: `url('/Techmobile4u Background (mobile).png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            minHeight: '100vh'
           }}
         ></div>
         {/* Overlay for text readability - Minimal on mobile, normal on desktop */}
