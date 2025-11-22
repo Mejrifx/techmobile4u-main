@@ -175,15 +175,15 @@ const Home = () => {
         <div 
           className="lg:hidden absolute inset-0 z-0"
           style={{
-            backgroundImage: `url('/Techmobile4u%20Background%20(mobile).png')`,
+            backgroundImage: `url('/Techmobile4u Background (mobile).png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed'
           }}
         ></div>
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/20 z-[1]"></div>
+        {/* Overlay for text readability - Lighter on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/5 to-black/10 z-[1] lg:from-black/20 lg:via-black/10 lg:to-black/20"></div>
         
         {/* Hero Content Section */}
         <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)] pt-32">
