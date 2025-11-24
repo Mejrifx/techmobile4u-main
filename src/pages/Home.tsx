@@ -171,22 +171,15 @@ const Home = () => {
             backgroundAttachment: 'fixed'
           }}
         ></div>
-        {/* Background Image - Mobile */}
+        {/* Background - Mobile (White) */}
         <div 
-          className="lg:hidden absolute inset-0 z-0 w-full h-full"
-          style={{
-            backgroundImage: `url('/Techmobile4u Background (mobile2).png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh'
-          }}
+          className="lg:hidden absolute inset-0 z-0 w-full h-full bg-white"
         ></div>
         {/* Overlay for text readability - Minimal on mobile, normal on desktop */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent z-[1] lg:from-black/20 lg:via-black/10 lg:to-black/20"></div>
         
         {/* Hero Content Section */}
-        <section className="relative text-white flex items-center justify-center min-h-[calc(100vh-160px)] pt-32">
+        <section className="relative text-white lg:text-white text-black flex items-center justify-center min-h-[calc(100vh-160px)] pt-32">
           <div className="container py-8 md:py-16 relative z-10">
           {/* Desktop layout */}
           <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-12">
@@ -195,6 +188,7 @@ const Home = () => {
               <h1 
                 ref={desktopHeadingRef}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-berthold"
+                style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2)' }}
               ></h1>
               <p 
                 ref={desktopDescRef}
@@ -221,7 +215,7 @@ const Home = () => {
             <div className="flex items-center justify-center">
               <img 
                 ref={desktopLogoRef}
-                src="/Techmobile4u Logo.png" 
+                src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-64 md:h-72 lg:h-80 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
@@ -233,14 +227,17 @@ const Home = () => {
             {/* Text at top */}
             <h1 
               ref={mobileHeadingRef}
-              className="text-4xl sm:text-5xl font-bold leading-tight max-w-md mx-auto" 
-              style={{ fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif" }}
+              className="text-4xl sm:text-5xl font-bold leading-tight max-w-md mx-auto text-black" 
+              style={{ 
+                fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif",
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.15)'
+              }}
             ></h1>
             
             {/* Description text above logo */}
             <p 
               ref={mobileDescRef}
-              className="text-lg sm:text-xl opacity-90 leading-relaxed max-w-lg px-4"
+              className="text-lg sm:text-xl opacity-90 leading-relaxed max-w-lg px-4 text-black"
             >
               Shop the latest phones and tablets or sell your used devices for instant cash. 
               Trusted, secure, and hassle-free.
@@ -250,7 +247,7 @@ const Home = () => {
             <div className="flex justify-center py-4">
               <img 
                 ref={mobileLogoRef}
-                src="/Techmobile4u Logo.png" 
+                src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-48 sm:h-56 w-auto opacity-95"
               />
