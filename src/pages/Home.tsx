@@ -175,7 +175,7 @@ const Home = () => {
         <div 
           className="lg:hidden absolute inset-0 z-0 w-full h-full"
           style={{
-            backgroundImage: `url('/Techmobile4u Background (mobile).png')`,
+            backgroundImage: `url('/Techmobile4u Background (mobile2).png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
