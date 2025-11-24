@@ -258,10 +258,10 @@ const Home = () => {
               ref={mobileButtonsRef}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4"
             >
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg py-4 px-8" asChild>
+              <Button size="lg" className="w-full sm:w-auto text-lg py-4 px-8 bg-[#1c61ab] hover:bg-[#15508a] text-white" asChild>
                 <Link to="/shop">Shop Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg py-4 px-8 bg-white/10 border-white/30 hover:bg-white/20 text-white" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg py-4 px-8 border-[#1c61ab] text-[#1c61ab] hover:bg-[#1c61ab] hover:text-white" asChild>
                 <Link to="/sell">Sell Your Device</Link>
               </Button>
             </div>
