@@ -227,10 +227,16 @@ const Home = () => {
             {/* Text at top */}
             <h1 
               ref={mobileHeadingRef}
-              className="text-4xl sm:text-5xl font-bold leading-tight max-w-md mx-auto text-black" 
+              className="text-4xl sm:text-5xl max-w-md mx-auto text-black" 
               style={{ 
-                fontFamily: "'Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif",
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.15)'
+                fontFamily: "'Plus Jakarta Sans', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif",
+                fontWeight: 700,
+                letterSpacing: '-0.02em',
+                lineHeight: '1.1',
+                textShadow: '0 2px 8px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08)',
+                textRendering: 'optimizeLegibility',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale'
               }}
             ></h1>
             
