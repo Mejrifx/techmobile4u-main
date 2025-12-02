@@ -215,7 +215,7 @@ const Home = () => {
             <div className="flex items-center justify-center">
               <img 
                 ref={desktopLogoRef}
-                src="/techmobile4u-main-logo.svg" 
+                src="/Techmobile4u Logo.png" 
                 alt="TechMobile4U" 
                 className="h-64 md:h-72 lg:h-80 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
@@ -253,7 +253,7 @@ const Home = () => {
             <div className="flex justify-center py-4">
               <img 
                 ref={mobileLogoRef}
-                src="/techmobile4u-main-logo.svg" 
+                src="/Techmobile4u Logo.png" 
                 alt="TechMobile4U" 
                 className="h-48 sm:h-56 w-auto opacity-95"
               />
