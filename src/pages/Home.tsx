@@ -253,7 +253,7 @@ const Home = () => {
             <div className="flex justify-center py-4">
               <img 
                 ref={mobileLogoRef}
-                src="/Techmobile4u Logo.png" 
+                src="/techmobile4u-main-logo.svg" 
                 alt="TechMobile4U" 
                 className="h-48 sm:h-56 w-auto opacity-95"
               />
